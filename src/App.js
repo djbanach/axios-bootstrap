@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Table } from 'react-bootstrap';
+import  UserTable from './components/UserTable';
 
 class App extends Component {
 
@@ -8,8 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       items: [],
-      isLoaded: false,
-      pictures: []
+      isLoaded: false
     }
   }
 
@@ -22,11 +21,6 @@ class App extends Component {
           items: user
         });
       })
-
-      // axios.get(`https://jsonplaceholder.typicode.com/photos`)
-      // .then(res => {
-      //   const
-      // })
   }
 
   render() {
@@ -38,23 +32,7 @@ class App extends Component {
     else {
       return (
         <div className="App">
-          <Table striped bordered hover>
-            <thead>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone Number</th>
-            </thead>
-            <tbody>
-              {items.map(item => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>{item.email}</td>
-                  <td>{item.phone}</td>
-                </tr>
-              ))}
-
-            </tbody>
-          </Table>
+          <UserTable items={items} />
         </div>
       );
     }
