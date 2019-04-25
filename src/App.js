@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import  UserTable from './components/UserTable';
+import UserTable from './components/UserTable';
+import NavbarTop from './components/NavbarTop';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
     else {
       return (
         <div className="App">
+          <NavbarTop label={"Axios-bootstrap app"} />
           <UserTable items={items} />
         </div>
       );
