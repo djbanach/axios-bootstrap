@@ -24,8 +24,18 @@ class App extends Component {
       })
   }
 
+  filter(e){
+    this.setState({filter: e.target.value})
+  }
+
   render() {
-    var { isLoaded, items } = this.state;
+    var { isLoaded, items, filter } = this.state;
+
+    if(filter) {
+      items = items.filter(item =>
+        item.name.toLowerCase()
+        .includes(filter.toLowerCase()))
+    }
 
     if (!isLoaded) {
       return <div>Loading...</div>
@@ -33,7 +43,7 @@ class App extends Component {
     else {
       return (
         <div className="App">
-          <NavbarTop label={"Axios-bootstrap app"} />
+          <NavbarTop label={"Axios-bootstrap app"} onChange={this.filter.bind(this)} />
           <UserTable items={items} />
         </div>
       );

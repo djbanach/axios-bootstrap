@@ -12,7 +12,7 @@ const UserTable = (props) => {
                 </thead>
                 <tbody>
                     {props.items.map(item =>
-                        <tr key={item.key}>
+                        <tr key={item.id}>
                             <td>{item.name}</td>
                             <td>{item.email}</td>
                             <td>{item.phone}</td>
