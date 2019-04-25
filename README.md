@@ -8,6 +8,6 @@ This is a simple one page react web application to get use to working with REST 
 -React-bootstrap - For styling
 
 ##What I learned
-*React fundamentals (state, props, etc...)
-*How to use axios to make api requests
-*Some styling with bootstrap
+React fundamentals (state, props, etc...)
+How to use axios to make api requests
+Some styling with bootstrap
